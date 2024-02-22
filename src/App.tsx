@@ -21,7 +21,7 @@ function handleSubmitForm(e: React.FormEvent<HTMLFormElement>) {
 
   const contactFormData = new FormData(target);
   const contactFormDataObject = Object.fromEntries(contactFormData.entries()
-  ) as unknown as User & {
+  ) as unknown as Omit<User, "age"> & {
     age: string;
   };
   console.log(contactFormDataObject);
